@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+body{
+  background-color: black;
+  color:white;
+}
+h1{
+  color: antiquewhite; 
+  text-decoration: underline overline;
+  text-decoration-color: white;
+}
+table{
+  background-color: #d2b48c;
+  border-color:white;
+}
+h3{
+  background-color:white;
+  color:black;
+  text-align: center;
+  font-family: 'Roboto Mono', Cursive;
+}
+
+.input{
+  background-color:#d2b48c;
+}
+.date{
+  text-decoration: underline;
+}
+p{
+  font-family:monospace;
+  text-indent: 50px;
+  /*This is one of the things I found in W3Schools, what this does is add an indentation to the paragraphs of the input for the blog*/
+}

@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,400');
+body{
+  background-image: linear-gradient(to bottom right, white, rgb(24,138,141), rgb(20,17,99));
+  height: 100%;
+}
+h1{
+  text-align: center ;
+  text-shadow: 3px 3px black;
+  font-family: 'Roboto', sans-serif;
+  color: antiquewhite;
+}
+h3{
+  font-family:'Poppins', sans-serif;
+  font-weight:200;
+}
+h4{
+  font-family:'Poppins', sans-serif;
+  font-weight:200;
+}
+td, th{
+  font-family:'Poppins', sans-serif;
+}
+.specialTable{
+  color: white;
+}
+.tableHead{
+  font-family:'Poppins', sans-serif;
+  font-weight:200;
+  text-decoration:underline;
+}
+.specialTable, .tdata, .thead {  
+  border: 1px solid #ddd;
+  text-align: left;
+}
+thead{
+  background-color: rgb(96,221,142);
+}
+.specialTable {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.thead, .tdata {
+  padding: 15px;
+}
+img{
+  border-color: rgb(96,221,142);
+  border-width: 5px;
+}
+#cucumber{
+  color: green;
+}
+#tomato{
+  color:red;
+}

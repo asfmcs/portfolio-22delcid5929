@@ -1,0 +1,71 @@
+body{
+   font-family: "Helvetica Neue", Helvetica;
+}
+h1{
+  font-weight:450;
+  text-align:center;
+}
+h2{
+  font-weight:300;
+  text-align:center;
+}
+h4{
+  text-align:center;
+}
+#invite1{
+  margin-left:50px;
+  margin-right:50px;
+}
+#invite{
+  width:500px;
+  margin:auto;
+  border:5px hidden;
+}
+#date{
+  text-decoration:underline wavy royalblue;
+}
+#appleLogo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 35%;
+}
+#jxe3{
+  text-decoration:overline;
+}
+#urWork{
+  margin:10px;
+  border:1px solid black;
+}
+#app{
+  text-decoration:underline;
+}
+#appIcon{
+  border-radius:10px;
+  position:absolute;
+  left:50%;
+}
+#yr5{
+  text-align:justify;
+  text-justify:inter-word;
+  padding:20px;
+}
+#signature{
+  text-align:left;
+}
+#award{
+  position:relative;
+  margin-left:70px;
+  margin-right:70px;
+}
+#congrats{
+  text-align:center;
+}
+.sidebar{
+  float:right;
+  width:30%;
+}
+iframe{
+  position:relative;
+  width:330px;
+}
