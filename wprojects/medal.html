@@ -1,0 +1,128 @@
+<html>
+<head>
+<title>Medal Design</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://static.codehs.com/gulp/a818e45667427600634e9e44b17902f1a5d48243/chs-js-lib/chs.js"></script>
+
+
+<style>
+canvas {
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align: top;
+}
+
+pre {
+    border: 1px solid black;
+    display: inline-block;
+    width: 400px;
+    height: 500px;
+    background-color: #F5F5F5;
+}
+</style>
+
+</head>
+
+<body>
+<h1>Medal Design</h1>
+
+
+
+<canvas
+width="400"
+height="500"
+class="codehs-editor-canvas"></canvas>
+<pre id="console"></pre>
+
+<script>
+window.onload = function() {
+
+    function start(){
+    var medal = new Circle(150);
+    medal.setPosition(getWidth() / 2, getHeight() / 2);
+    medal.setColor("#cd5832");
+    add(medal);
+    
+    var ring1 = new Circle(15);
+    ring1.setPosition(105, 170);
+    ring1.setColor("#b94f2d");
+    add(ring1);
+    
+    var ring2 = new Circle(15);
+    ring2.setPosition(135, 170);
+    ring2.setColor("#b94f2d");
+    add(ring2);
+    
+    var ring3 = new Circle(15);
+    ring3.setPosition(165, 170);
+    ring3.setColor("#b94f2d");
+    add(ring3);
+    
+    var ring4 = new Circle(15);
+    ring4.setPosition(120, 195);
+    ring4.setColor("#b94f2d");
+    add(ring4);
+    
+    var ring5 = new Circle(15);
+    ring5.setPosition(150, 195);
+    ring5.setColor("#b94f2d");
+    add(ring5);
+    
+    var inRing1 = new Circle(10);
+    inRing1.setPosition(105,170);
+    inRing1.setColor("#cd5832");
+    add(inRing1);
+    
+    var inRing1 = new Circle(10);
+    inRing1.setPosition(105,170);
+    inRing1.setColor("#cd5832");
+    add(inRing1);
+    
+    var inRing2 = new Circle(10);
+    inRing2.setPosition(135, 170);
+    inRing2.setColor("#cd5832");
+    add(inRing2);
+    
+    var inRing3 = new Circle(10);
+    inRing3.setPosition(165,170);
+    inRing3.setColor("#cd5832");
+    add(inRing3);
+    
+    var inRing4 = new Circle(10);
+    inRing4.setPosition(120,195);
+    inRing4.setColor("#cd5832");
+    add(inRing4);
+    
+    var inRing5 = new Circle(10);
+    inRing5.setPosition(150,195);
+    inRing5.setColor("#cd5832");
+    add(inRing5);
+    
+    var neck1 = new Rectangle(35, 100);
+    neck1.setPosition(250,40);
+    neck1.setColor("#cd5832");
+    add(neck1);
+    
+    var neck2 = new Rectangle(35, 100);
+    neck2.setPosition(110,40);
+    neck2.setColor("#cd5832");
+    add(neck2);
+    
+    var neck3 = new Rectangle(120, 60);
+    neck3.setPosition(140,10);
+    neck3.setColor("#92cfd1");
+    add(neck3);
+    
+}
+
+
+    if (typeof start === 'function') {
+        start();
+    }
+};
+</script>
+
+</body>
+</html>

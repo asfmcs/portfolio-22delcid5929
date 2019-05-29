@@ -1,0 +1,263 @@
+<html>
+<head>
+<title>3-3: Maze</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://static.codehs.com/gulp/a818e45667427600634e9e44b17902f1a5d48243/chs-js-lib/chs.js"></script>
+
+
+<style>
+canvas {
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align: top;
+}
+
+pre {
+    border: 1px solid black;
+    display: inline-block;
+    width: 400px;
+    height: 500px;
+    background-color: #F5F5F5;
+}
+</style>
+
+</head>
+
+<body>
+<h1>3-3: Maze</h1>
+
+
+
+<canvas
+width="400"
+height="500"
+class="codehs-editor-canvas"></canvas>
+<pre id="console"></pre>
+
+<script>
+window.onload = function() {
+
+    function start(){
+    drawMaze();
+    drawGhost(getWidth()/2, getHeight()/2 - 65, Color.red);
+    drawGhost(getWidth()/2 + 30, getHeight()/2, Color.orange);
+    drawGhost(getWidth()/2, getHeight()/2, Color.cyan);
+    drawGhost(getWidth()/2 - 30, getHeight()/2, "#FFC0CB");
+    drawPacman(getWidth()/2, getHeight()/2 + 160);
+    
+
+}
+function drawMaze(){
+    var background = new Rectangle(getWidth(), getHeight());
+    background.setPosition(0,0);
+    background.setColor(Color.black);
+    add(background);
+    
+    var box = new Rectangle(120, 75);
+    box.setPosition(getWidth()/2-60, getHeight()/2 - 37.5);
+    box.setColor(Color.blue);
+    add(box);
+    
+    var inbox = new Rectangle(100, 55);
+    inbox.setPosition(getWidth()/2-50, getHeight()/2 - 27.5);
+    inbox.setColor(Color.black);
+    add(inbox);
+    
+    var black = new Rectangle(116,6);
+    black.setPosition(getWidth()/2-60 + 2, getHeight()/2 - 37.5 + 2);
+    black.setColor(Color.black);
+    add(black);
+    
+    var black1 = new Rectangle(116,6);
+    black1.setPosition(getWidth()/2-60 + 2, getHeight()/2 - 37.5 + 67);
+    black1.setColor(Color.black);
+    add(black1);
+    
+    var black2 = new Rectangle(6,70);
+    black2.setPosition(getWidth()/2-60 + 2, getHeight()/2 - 37.5 + 2);
+    black2.setColor(Color.black);
+    add(black2);
+    
+    var black3 = new Rectangle(6,70);
+    black3.setPosition(getWidth()/2-60 + 112, getHeight()/2 - 37.5 + 2);
+    black3.setColor(Color.black);
+    add(black3);
+    
+    var black4 = new Rectangle(40, 10);
+    black4.setPosition(getWidth()/2-60+40, getHeight()/2 - 37.5 );
+    black4.setColor(Color.black);
+    add(black4);
+    
+    var start = new Rectangle(40, 3);
+    start.setPosition(getWidth()/2-60+40, getHeight()/2 - 37.5+3);
+    start.setColor("#FFB6C1");
+    add(start);
+    
+    var bruh = new Rectangle(120, 20);
+    bruh. setPosition(getWidth()/2-60, getHeight()/2 - 37.5 + 100);
+    bruh.setColor(Color.blue);
+    add(bruh);
+    
+    var bruh1 = new Rectangle(114, 13);
+    bruh1.setPosition(getWidth()/2-60 + 3, getHeight()/2 - 37.5 + 103);
+    bruh1.setColor(Color.black);
+    add(bruh1);
+    
+    var bruh2 = new Rectangle (20, 60);
+    bruh2.setPosition(getWidth()/2 - 10, getHeight()/2 - 37.5 + 103 - 2 + 18);
+    bruh2.setColor(Color.blue);
+    add(bruh2);
+    
+    var bruh3 = new Rectangle (16, 63);
+    bruh3.setPosition(getWidth()/2 - 10 + 2, getHeight()/2 - 37.5 + 103 - 2 + 13 );
+    bruh3.setColor(Color.black);
+    add(bruh3);
+    
+    var bruh4 = new Rectangle(120, 20);
+    bruh4. setPosition(getWidth()/2-60, getHeight()/2 + 37.5 - 190);
+    bruh4.setColor(Color.blue);
+    add(bruh4);
+    
+    var bruh5 = new Rectangle(114, 13);
+    bruh5.setPosition(getWidth()/2-60 + 3, getHeight()/2 + 37.5 - 188);
+    bruh5.setColor(Color.black);
+    add(bruh5);
+    
+    var bruh6 = new Rectangle (20, 60);
+    bruh6.setPosition(getWidth()/2 - 10, getHeight()/2 + 37.5 - 175);
+    bruh6.setColor(Color.blue);
+    add(bruh6);
+    
+    var bruh7 = new Rectangle (16, 63);
+    bruh7.setPosition(getWidth()/2 - 10 + 2, getHeight()/2 + 37.5 - 180);
+    bruh7.setColor(Color.black);
+    add(bruh7);
+    
+    var bruh8 = new Rectangle(20, 130);
+    bruh8.setPosition(getWidth()/2 - 120, getHeight()/2 -152);
+    bruh8.setColor(Color.blue);
+    add(bruh8);
+    
+    var bruh9 = new Rectangle(16, 124);
+    bruh9.setPosition(getWidth()/2 - 120 + 2, getHeight()/2 -152 + 2);
+    bruh9.setColor(Color.black);
+    add(bruh9);
+    
+    var bruh10 = new Rectangle (60, 20);
+    bruh10.setPosition(getWidth()/2 - 103 + 2, getHeight()/2 - 97);
+    bruh10.setColor(Color.blue);
+    add(bruh10);
+    
+    var bruh10 = new Rectangle (74, 15);
+    bruh10.setPosition(getWidth()/2 - 120 + 3, getHeight()/2 - 97 + 3);
+    bruh10.setColor(Color.black);
+    add(bruh10);
+    
+    var bruh11 = new Rectangle(20, 130);
+    bruh11.setPosition(getWidth()/2 + 100, getHeight()/2 -152);
+    bruh11.setColor(Color.blue);
+    add(bruh11);
+    
+    var bruh12 = new Rectangle(16, 124);
+    bruh12.setPosition(getWidth()/2 + 100 + 2, getHeight()/2 -152 + 2);
+    bruh12.setColor(Color.black);
+    add(bruh12);
+    
+    var bruh13 = new Rectangle (60, 20);
+    bruh13.setPosition(getWidth()/2 + 40, getHeight()/2 - 97);
+    bruh13.setColor(Color.blue);
+    add(bruh13);
+    
+    var bruh14 = new Rectangle (74, 15);
+    bruh14.setPosition(getWidth()/2 + 43, getHeight()/2 - 97 + 3);
+    bruh14.setColor(Color.black);
+    add(bruh14);
+    
+    var bruh15 = new Rectangle(20, 60);
+    bruh15.setPosition(getWidth()/2 - 120, getHeight()/2 + 26);
+    bruh15.setColor(Color.blue);
+    add(bruh15);
+    
+    var bruh16 = new Rectangle(16, 56);
+    bruh16.setPosition(getWidth()/2 - 120 + 2, getHeight()/2 + 26 + 2);
+    bruh16.setColor(Color.black);
+    add(bruh16);
+    
+    var bruh17 = new Rectangle(20, 60);
+    bruh17.setPosition(getWidth()/2 + 100, getHeight()/2 + 26);
+    bruh17.setColor(Color.blue);
+    add(bruh17);
+    
+    var bruh18 = new Rectangle(16, 56);
+    bruh18.setPosition(getWidth()/2 + 100 + 2, getHeight()/2 + 26 + 2);
+    bruh18.setColor(Color.black);
+    add(bruh18);
+
+}
+
+function drawGhost(centerX, centerY, color){
+    var head = new Circle(10);
+    head.setPosition(centerX, centerY);
+    head.setColor(color);
+    add(head);
+    
+    var body = new Rectangle(20, 20);
+    body.setPosition(centerX - 10, centerY);
+    body.setColor(color);
+    add(body);
+    
+    var foot1 = new Circle(3);
+    foot1.setPosition(centerX, centerY +20);
+    foot1.setColor(color);
+    add(foot1);
+    
+    var foot2 = new Circle(3);
+    foot2.setPosition(centerX - 7, centerY + 20);
+    foot2.setColor(color);
+    add(foot2);
+    
+    var foot3 = new Circle(3);
+    foot3.setPosition(centerX + 7, centerY + 20);
+    foot3.setColor(color);
+    add(foot3);
+    
+    var eye1 = new Circle(3);
+    eye1.setPosition(centerX - 4, centerY);
+    eye1.setColor(Color.white);
+    add(eye1);
+    
+    var eye2 = new Circle(3);
+    eye2.setPosition(centerX + 4, centerY);
+    eye2.setColor(Color.white);
+    add(eye2);
+    
+    var pupil1 = new Circle(1);
+    pupil1.setPosition(centerX - 2, centerY);
+    pupil1.setColor(Color.blue);
+    add(pupil1);
+    
+    var pupil2 = new Circle(1);
+    pupil2.setPosition(centerX + 6, centerY);
+    pupil2.setColor(Color.blue);
+    add(pupil2);
+    
+    }
+    
+    function drawPacman(x, y){
+        var pac = new Circle(17);
+        pac.setPosition(x, y);
+        pac.setColor(Color.yellow);
+        add(pac);
+    }
+
+
+    if (typeof start === 'function') {
+        start();
+    }
+};
+</script>
+
+</body>
+</html>
